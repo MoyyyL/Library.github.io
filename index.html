@@ -15,35 +15,9 @@
         <div class="mini__library">
             
             <div class="library__books">
+                <!--MAXIMO DE 10 LIBROS-->
                 <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
-                </div>
-                <div class="book">
-                    <button>name</button>
+                    <button>nombre</button>
                 </div>
             </div>
 
@@ -56,7 +30,14 @@
     </main>
 
     <aside class="control__panel">
-        <button>New book</button>
+        <h2>Add new book</h2>
+        <form class="new__book">
+            <input type="text" placeholder="Title" id="title">
+            <input type="text" placeholder="Author" id="author">
+            <input type="number" placeholder="Pages" id="pages">
+            <textarea name="summary" id="summary" placeholder="Add a summary"></textarea>
+            <input type="submit" id="send" value="Create">
+        </form>
     </aside>
 
     <script src="logic.js"></script>

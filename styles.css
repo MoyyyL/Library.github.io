@@ -54,15 +54,17 @@ body {
 }
 
 .book {
-    background-color: red;
+    background-color: pink;
     border-radius: 3%;
     height: 15dvh;
     width: 4.6vw;
+    box-shadow: 0 3px 6px;
 }
 
 .book button {
     width: 100%;
     height: 100%;
+    font-size: clamp(0.9rem, 1.2vw, 1.6rem);
     background-color: transparent;
     border: none;
     overlay: none;
@@ -101,5 +103,43 @@ body {
 
 .control__panel {
     grid-area: control;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: red;
+    padding: 1rem;
+}
+
+.new__book {
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 60%;
+    background-color: #48e;
+}
+
+.new__book input, .new__book textarea {
+    height: 20%;
+    border-radius: 10px;
+    background-color: #000000a0;
+    border: transparent;
+    outline: 1px solid green;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    resize: none;
+    font-family: monospace;
+}
+
+.new__book textarea {
+    height: 30%;
+}
+
+.new__book input:last-child {
+    width: 60%;
+    height: 15%;
+    align-self: center;
 }
