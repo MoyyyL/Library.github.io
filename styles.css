@@ -137,11 +137,60 @@ body {
 }
 
 .new__book textarea {
-    height: 30%;
+    height: 55%;
+   font-size: 1.1rem;
 }
 
 .new__book input:last-child {
     width: 60%;
     height: 15%;
     align-self: center;
+}
+
+/** DIALOG--------------------------*/
+.library__book-info {
+    position: relative;
+    width: 20dvw;
+    height: 50dvh;
+    padding: 1rem;
+    background-color: #d0a72c;
+    font-size: clamp(1rem, 1.1vw, 1.5rem);
+}
+
+.library__book-info h3 {
+    margin: 0.8rem 0 0 0;
+}
+
+.library__book-info p {
+    margin: 0;
+}
+
+.library__book-info button:first-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #00000008;
+    border: none;
+    font-size: 1vw;
+}
+
+.book-read {
+    background-color: purple;
+    margin-top: 2rem;
+    width: 50%;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
 }

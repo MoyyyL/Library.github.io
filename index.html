@@ -13,14 +13,32 @@
 
     <main class="Library">
         <div class="mini__library">
-            
+<!--! CHAMBA------------------------------------------------------------->
+            <dialog class="library__book-info"> <!--! DIALOG-->
+                <button>X</button>
+                
+                <h3>Title:</h3>
+                <p class="book-title">The fokin hobbit</p>
+                
+                <h3>Author:</h3>
+                <p class="book-author">me</p>
+                
+                <h3>Pages</h3>
+                <p class="book-pages">198</p>
+                
+                <h3>Summary</h3>
+                <p class="book-summary">un libro bien culei mano</p>
+                
+                <button class="book-read">Read</button>
+            </dialog>
+
             <div class="library__books">
                 <!--MAXIMO DE 10 LIBROS-->
                 <div class="book">
-                    <button>nombre</button>
+                    <button>The hobbit</button> <!--! abrir dialog-->
                 </div>
             </div>
-
+<!--! CHAMBA------------------------------------------------------------->
             <div class="library__table">
                 <div class="part-from-above"></div>
                 <div class="leg1"></div>
@@ -36,7 +54,7 @@
             <input type="text" placeholder="Author" id="author">
             <input type="number" placeholder="Pages" id="pages">
             <textarea name="summary" id="summary" placeholder="Add a summary"></textarea>
-            <input type="submit" id="send" value="Create">
+            <input type="submit" id="send" value="Add">
         </form>
     </aside>
 

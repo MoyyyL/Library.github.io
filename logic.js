@@ -22,6 +22,29 @@ function addToLibrary(title = "", author = "", pages = 0, summary = "") {
 }
 
 //todo FUNCION QUE VA A DESPLEGAR EL LIBRO EN LA UI
+function displayBook(arrayElement) {
+    
+}
+
+
+
+//! DIALOG ------------------------------------------------------
+
+const dialog = document.querySelector(".library__book-info");
+const showButton = document.querySelector(".book button");
+const closeButton = document.querySelector(".library__book-info button");
+
+showButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+    dialog.close();
+});
+
+
+//! CHAMBA ------------------------------------------------------
+
 
 //* GETTING DATA -----------------------------------------------
 const Title = document.querySelector("#title");
