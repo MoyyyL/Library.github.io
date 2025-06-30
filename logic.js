@@ -30,27 +30,26 @@ function array_books() {
 }
 
 // SELECCIONA DOM, AGREGA EL LIBRO AL DOM, ASIGNA FUNCION A LOS BOTONES
-function displayBook(lastBook) {
+function displayBook(lastBook) { // lastbook is the array element
     const name = lastBook.title;
     const library_books = document.querySelector(".library__books"); //father
     const book_div = document.createElement("div"); //son
     const book_button = document.createElement("button");
 
-    book_button.textContent = name;
+    book_button.textContent = name; //title of the book
     book_div.classList.add("book");
     book_div.appendChild(book_button);
-    book_div.dataset.id = lastBook.id; //todo giving id to the book
+    book_div.dataset.id = lastBook.id; // giving ID to the div .book
     
     library_books.appendChild(book_div);
 
     book_button.addEventListener("click", () => {
-        //                  book-object, father, son
-        dialog_book_buttons(lastBook, library_books, book_div);
+        dialog_book_buttons(lastBook);
     })
 }
 
 // EDITS THE DIALOG WITH THE INFO OF THE PRESSED BOOK
-function dialog_book_buttons(element, father, son) {
+function dialog_book_buttons(element) {
     // selecciona el DOM
     const innerDialog = document.querySelector(".library__book-info");
 
@@ -70,7 +69,7 @@ function dialog_book_buttons(element, father, son) {
     book_read.dataset.id = element.id;
     book_read.textContent = (element.read == false) ? "unread" : "read"; 
 
-    //todo
+    // Asigna el mismo id al .book
     const book_delete = document.querySelector(".book-delete");
     book_delete.dataset.id = element.id;
 
@@ -94,7 +93,7 @@ closeButton.addEventListener("click", () => {
 
 // BOTON COMPARTIDO DE LEIDO
 const readButton = document.querySelector(".book-read"); // selecciona el boton en el DOM
-readButton.addEventListener("click", (obj) => {
+readButton.addEventListener("click", () => {
     const button_id = readButton.dataset.id; // Extrae el id del objeto
     let asd = library.find((element) => element.id == button_id); // compara los id del array con el propio y retorna el objeto
     if (asd.read === false) { // edita el contenido y valor del objeto
@@ -105,7 +104,20 @@ readButton.addEventListener("click", (obj) => {
         asd.read = false;
         readButton.textContent = "unread";
     }
-})
+});
+
+// BOTON ELIMINAR
+const deleteButton = document.querySelector(".book-delete"); //selecciona delete buton en el DOM
+deleteButton.addEventListener("click", () => {
+   const delButton_id = deleteButton.dataset.id; // extrae su ID
+   const elpepe = document.querySelector(".library__books") // selecciona el elemento padre
+   const tilin = document.querySelector(`.book[data-id = "${delButton_id}"]`); // selecciona el elemento .book a eliminar
+   elpepe.removeChild(tilin); // lo remueve
+   
+   let delIDX = library.findIndex((element) => element.id == delButton_id);
+   library.splice(delIDX, 1); // lo elimina del array
+   dialog.close();
+});
 
 //* FORM --------------------------------------------------
 // GETTING DATA
