@@ -174,14 +174,18 @@ body {
     font-size: 1vw;
 }
 
-.book-read {
+.book-read, .book-delete {
     background-color: purple;
     margin-top: 2rem;
-    width: 50%;
+    width: 25%;
     height: 40px;
     border: 2px solid black;
     border-radius: 10px;
     font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+.book-delete {
+    background-color: rgb(255, 44, 44);
 }
 
 ::backdrop {
