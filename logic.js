@@ -78,15 +78,16 @@ function addToLibrary(title = "", author = "", pages = 0, summary = "") {
 }
 
 // CONSTRUCTOR OF BOOKS
-function Book(id, title, author, pages, summary, read) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.summary = summary;
-    this.read = read;
+//class Book {
+    constructor (id, title, author, pages, summary, read) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.summary = summary;
+        this.read = read;
+    }
 }
-
 // SELECTS THE LAST BOOK IN ARRAY AND CALL FUNCTION
 function array_books() {
     const last = library[library.length - 1];
